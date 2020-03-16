@@ -32,4 +32,4 @@ $('body').on('click', '.btn-delete', function (event) {
 	const taskId = $parent.data('id');
 	$parent.remove();
 	localStorage.removeItem(taskId);
-})
+});
