@@ -3,17 +3,16 @@ function addTask(id, task) {
 	.addClass('btn btn-warning btn-xs pull-right btn-edit')
 	.html('<i class=glyphicon glyphicon-pencil></i>')
 	// для делете
-	// const $btnDelete = $('<button>')
-	// 	.addClass('btn btn-danger btn-xs pull-right btn-delete')
-	// 	.html('<i class=glyphicon glyphicon-trash></i>');
+	const $btnDelete = $('<button>')
+		.addClass('btn btn-danger btn-xs pull-right btn-delete')
+		.html('<i class=glyphicon glyphicon-trash></i>');
 
 	const $taskItem = $('<li>')
 	.addClass('list-group-item')
 	.text(task.title)
+	.attr('data-id', id)
 	// для делете
-	// .attr('data-id', id)
-	// .append($btnDelete);
-
+	.append($btnDelete)
 	// для эдит
 	.attr('data-id', id)
 	.append($btnEdit);
@@ -21,5 +20,4 @@ function addTask(id, task) {
 	$tasksList
 		.find(`[data-status="${task.status}"]`)
 		.append($taskItem);
-		
 }
