@@ -20,10 +20,16 @@ $formAddTask.on('submit', function(event){
 	this.reset();
 });
 
-for (const key in localStorage) {
+for (let key in localStorage) {
 	
 	if(!localStorage.hasOwnProperty(key)) continue;
 	console.log(key);
 	const task = JSON.parse(localStorage[key]);
 	addTask(task.id, task);
 }
+$('body').on('click', '.btn-delete', function (event) {
+	const $parent = $(this).parents('[data-id]');
+	const taskId = $parent.data('id');
+	$parent.remove();
+	localStorage.removeItem(taskId);
+})
