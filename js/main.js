@@ -4,6 +4,9 @@ const $modalAddTask = $('#modalAddTask');
 const $formEditTask = $('#formEditTask');
 const $modalEditTask = $('#modalEditTask');
 const $count = $('.panel-body');
+const $removeAll = $('#removeAll');
+
+
 
 $formAddTask.on('submit', function(event){
 	event.preventDefault();
@@ -65,4 +68,11 @@ $('body').on('click', '.btn-edit', function (event) {
 			$formEditTask.find(`[name="${key}"]`).val(task[key]);
 		}
 		$modalEditTask.modal('show');
+});
+
+// кнопка ремув олл
+$removeAll.on('click', function () {
+	$('div.tab-pane').empty();
+	localStorage.clear();
+	counter();
 });

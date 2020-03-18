@@ -18,15 +18,18 @@
 		<div class="page-header">
 			<h1>Task list for the scarry friday</h1>
 		</div>
+		<!-- кнопки добавить и удалить таски -->
 		<div class="text-right">
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddTask"> <span class="glyphicon glyphicon-plus"></span> Add new task </button>
+			<button type="button" class="btn btn-danger" id="removeAll" > <span class="glyphicon glyphicon-remove"></span> Remove all </button>
+			<!-- шапка табов -->
 		</div>
 			<ul class="nav nav-tabs" role="tablist">
 			<li class="active"><a href="#todo" data-toggle="tab">To Do</a></li>
 			<li><a href="#inprogress" data-toggle="tab">In progress</a></li>
 			<li><a href="#done" data-toggle="tab">Done</a></li>
 		</ul>
-
+		<!-- контент -->
 		<div class="tab-content" id="tasks-list">
 			<div role="tabpanel" class="tab-pane active" id="todo">
 				<ul class="list-group" data-status = "1"></ul>
@@ -40,6 +43,7 @@
 				<ul class="list-group" data-status = "3"></ul>
 			</div>
 		</div>
+		<!-- счетчики -->
 		<div class="counters">
 			<div class="panel panel-danger col-md-4">
 				<div class="panel-heading">
@@ -65,7 +69,7 @@
 				</div>
 				<div class="panel-body">
 					Tasks count:
-					<span class="badge" data-count="3"></span>
+					<span class="badge" data-count="3">0</span>
 				</div>
 			</div>
 		</div>

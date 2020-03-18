@@ -35,18 +35,21 @@ function counter() {
 		switch (`${task.status}`) {
 			case '1':
 				$toDoCount += 1;
-				$count.find(`[data-count="${task.status}"]`).text(`${$toDoCount}`);
+				
 				break;
 			case '2':
 				$inProgressCount += 1;
-				$count.find(`[data-count="${task.status}"]`).text($inProgressCount);
+				
 				break;
 			case '3':
 				$doneCount += 1;
-				$count.find(`[data-count="${task.status}"]`).text($doneCount);
+				
 				break;
 			default:
 				break;
 		};
 	}
+	$count.find(`[data-count="1"]`).text($toDoCount);
+	$count.find(`[data-count="2"]`).text($inProgressCount);
+	$count.find(`[data-count="3"]`).text($doneCount);
 }
